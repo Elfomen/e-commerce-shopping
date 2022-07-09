@@ -1,0 +1,31 @@
+.table-container{
+    display: flex;
+    justify-content: center;
+    table{
+        padding: 10px;
+        width: 85%;
+        place-items: center;
+        tbody{
+            tr{
+                padding: 10px;
+                td{
+                    text-align: left;
+                    height: 120px;
+                    border-bottom: 1px solid #ddd;
+                }
+            }
+            .empty-card{
+                text-align: center;
+            }
+        }
+        thead{
+            
+            th{
+                // border-bottom: 1px solid rgba(0 ,0,0,0.4);
+                border-bottom: 1px solid #ddd;
+                text-align: left;
+            }
+        }
+    }
+}
+

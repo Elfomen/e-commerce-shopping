@@ -20,11 +20,17 @@
       height: 240px;
       display: flex;
       flex-direction: column;
-      overflow: scroll;
+      overflow: auto;
     }
   
     button {
       margin-top: auto;
     }
+  }
+
+  .to_cart_item{
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
   }
   
