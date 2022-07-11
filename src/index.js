@@ -5,7 +5,7 @@ import { BrowserRouter } from 'react-router-dom'
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { UserProvider } from './Context/user-context';
-import { ProductProvider } from './Context/product-context'
+import { CategoryProvider } from './Context/category-context'
 import { CardDropdownProvider } from './Context/card-dropdown-contex';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -15,9 +15,9 @@ root.render(
     <React.StrictMode>
       <CardDropdownProvider>
         <UserProvider>
-          <ProductProvider>
+          <CategoryProvider>
             <App />
-          </ProductProvider>
+          </CategoryProvider>
         </UserProvider>
       </CardDropdownProvider>
     </React.StrictMode>

@@ -49,7 +49,6 @@ const SignInForm = () => {
         try {
             const {user} = await signinWithEmailAndPassword(email, password)
         } catch (error) {
-            console.log(error.message)
         }
     }
 

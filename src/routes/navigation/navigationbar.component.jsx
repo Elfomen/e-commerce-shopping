@@ -1,6 +1,6 @@
 import { Outlet, Link } from 'react-router-dom'
 import { Fragment, useContext } from 'react'
-import './navigation.style.scss'
+import { Logocontainer, NavigationContainer, NavLinkContainer ,NavLink } from './navigation.style.jsx'
 import { ReactComponent as Logo } from '../../assets/crown.svg'
 import { UserContext } from '../../Context/user-context'
 import { SignUserOut } from '../../utils/firebase/firebaseutils'
@@ -11,7 +11,6 @@ const Navigation = () => {
 
     const { currentUser }  = useContext(UserContext)
     const { cardStatus , setCardStatus } = useContext(CardDropdownContext)
-    // console.log(currentUser)
 
 
     const handleCardClick = () => {
@@ -20,28 +19,28 @@ const Navigation = () => {
 
     return (
         <Fragment>
-            <div className='navigation'>
+            <NavigationContainer>
 
-                <Link className='logo-container' to='/'>
+                <Logocontainer to='/'>
                     <Logo className='logo'/>
-                </Link>
+                </Logocontainer>
 
-                <div className='nav-links-container'>
-                    <Link className='nav-link' to='/shop'>
+                <NavLinkContainer>
+                    <NavLink to='/shop'>
                         Shop
-                    </Link>
-                    {currentUser? <a className='nav-link signoutbtn' onClick={SignUserOut}>
+                    </NavLink>
+                    {currentUser? <NavLink onClick={SignUserOut}>
                         Sign Out
-                    </a> : <Link className='nav-link' to='/auth'>
+                    </NavLink> : <NavLink to='/auth'>
                         Signin
-                    </Link>}
+                    </NavLink>}
 
                     <CardIcon onclick={handleCardClick}/>
                     
-                </div>
+                </NavLinkContainer> 
 
-                {cardStatus&&<CardDropdown />}
-            </div>
+                 {cardStatus&&<CardDropdown />}
+                </NavigationContainer>
             <Outlet />
         </Fragment>
     )
