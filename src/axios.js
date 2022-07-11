@@ -2,6 +2,11 @@ import axios from 'axios'
 
 const event = axios.create({
     baseURL : "https://ecommerceapi-shopapp.herokuapp.com/" ,
+    headers: {
+        'content-type': 'application/json',
+        'Accept': 'application/json' ,
+        "Access-Control-Allow-Origin": true
+      }
     
     //baseURL : "http://localhost:5000"
 })
