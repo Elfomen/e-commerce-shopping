@@ -8,9 +8,14 @@ const CategoryList = () => {
     const { categories } = useContext(CategoryContext)
     return (
         <div className='categories-container'>
-            {categories.map((category , i) => {
+            {
+                !categories&&<h1>Your list is empty</h1>
+            }
+            {categories&&categories.map((category , i) => {
                 return <CategoryItem category={category} title={category.name} />
-            })}
+            })
+            
+            }
         </div>
     )
 }
