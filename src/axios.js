@@ -5,6 +5,7 @@ const event = axios.create({
     headers: {
         'content-type': 'application/json',
         'Accept': 'application/json' ,
+        "Access-Control-Allow-Origin": true
       }
     
 })
