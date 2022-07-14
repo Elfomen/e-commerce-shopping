@@ -1,23 +1,23 @@
 import axios from 'axios'
 
-const event = axios.create({
-    baseURL : "https://ecommerceapi-shopapp.herokuapp.com/" ,
-    headers: {
-        'content-type': 'application/json',
-        'Accept': 'application/json' ,
-        "Access-Control-Allow-Origin": true
-      }
-    
-})
-
 // const event = axios.create({
-//     baseURL : "http://localhost:8000/" ,
+//     baseURL : "https://ecommerceapi-shopapp.herokuapp.com/" ,
 //     headers: {
 //         'content-type': 'application/json',
-//         // 'Accept': 'application/json' ,
-//         // "Access-Control-Allow-Origin": true
+//         'Accept': 'application/json' ,
+//         "Access-Control-Allow-Origin": true
 //       }
     
 // })
+
+const event = axios.create({
+    baseURL : "http://localhost:8000/" ,
+    headers: {
+        'content-type': 'application/json',
+        // 'Accept': 'application/json' ,
+        // "Access-Control-Allow-Origin": true
+      }
+    
+})
 
 export default event

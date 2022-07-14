@@ -29,7 +29,7 @@ const Checkout = () => {
                         {cartItems.length > 0 ? cartItems.map(item => {
                             return <CardCheckoutComponent cart_item={item} handleClick={addItemToCart} handleDeletion={deleteItemFromCart} />
                         }) : <h2 className="empty-card">Your card is empty</h2>}
-                        
+
                         <tr id="total_row">
                             <td></td>
                             <td></td>
@@ -46,7 +46,7 @@ const Checkout = () => {
                 </table>
 
             </div>
-            
+
         </div>
 
     )
