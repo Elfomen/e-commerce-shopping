@@ -7,6 +7,7 @@ import Shop from './routes/Shop/shop.component'
 import { useContext, useEffect } from 'react'
 import SHOP_DATA from './shop-data.json'
 import Checkout from './routes/card-checkout/checkout'
+import Cart_Checkout from './routes/Cart-checkout/checkout'
 
 
 
@@ -20,6 +21,7 @@ const App = () => {
           <Route path='auth' element={<Signin />} />
           <Route path='cart-item' element={<Checkout />} />
         </Route>
+        <Route path='cart-checkout' element={<Cart_Checkout />} />
       </Routes>
 
   )

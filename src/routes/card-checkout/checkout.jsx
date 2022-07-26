@@ -1,4 +1,6 @@
 import { useContext } from "react"
+import { Link } from "react-router-dom"
+import ButtonComponent from "../../components/button-component/button"
 import CardCheckoutComponent from "../../components/cart-product-component/cart-component"
 import { CardDropdownContext } from "../../Context/card-dropdown-contex"
 import './checkout.scss'
@@ -31,14 +33,19 @@ const Checkout = () => {
                         }) : <h2 className="empty-card">Your card is empty</h2>}
 
                         <tr id="total_row">
-                            <td></td>
+                            <td>
+                                <Link to={`/cart-checkout`}>
+                                    <ButtonComponent>PROCEED TO CHECKOUT</ButtonComponent>
+
+                                </Link>
+                            </td>
                             <td></td>
                             <td></td>
                             <td></td>
                             <td>
                                 <div>
                                     <h3>Total</h3>
-                                    <span>$ {calculateTotal()}</span>
+                                    <span>{calculateTotal()} FCFA</span>
                                 </div>
                             </td>
                         </tr>
