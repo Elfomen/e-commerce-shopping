@@ -11,7 +11,7 @@ const Cart_Checkout = () => {
     const calculateCartTotal = () => {
         let sum = 0;
         cartItems.map(item => {
-            sum += item.price
+            sum += item.price * item.quantity
         })
 
         return sum
