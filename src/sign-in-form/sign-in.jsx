@@ -2,7 +2,6 @@ import { getRedirectResult } from "firebase/auth"
 import { Fragment, useContext, useEffect, useState } from "react"
 import ButtonComponent from "../components/button-component/button"
 import FormInput from "../components/FormInput/forminput"
-import { UserContext } from "../Context/user-context"
 import { auth, createUserDocumentFromAuth, signinWithEmailAndPassword, signInWithGooglePopup } from "../utils/firebase/firebaseutils"
 import './signin.scss'
 const SignInForm = () => {

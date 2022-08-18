@@ -3,6 +3,7 @@ import ProductCard from '../product-card/product'
 import './preview.scss'
 
 const CategoryPreview = ({ title, products }) => {
+    console.log(products)
     return (
         <div className='category-preview-container'>
             <Link to={`/shop/${title}`} className='title-container'>

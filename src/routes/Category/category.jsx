@@ -1,26 +1,15 @@
 import { useContext, useEffect, useState } from 'react'
+import { useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
 import ProductCard from '../../components/product-card/product'
-import { CategoryContext } from '../../Context/category-context'
+import {categorisSelectors } from '../../redux/store/categories/categories.selector'
 import './category.scss'
 
 const Category = () => {
 
     const { category } = useParams()
-    const { categories } = useContext(CategoryContext)
+    const products  = useSelector(categorisSelectors.getProducts(category))
 
-    const [products, setProducts] = useState([])
-
-    useEffect(() => {
-        let cat = categories.filter((cat) => cat.name == category)
-        try {
-            setProducts(cat[0]["products"])
-
-        } catch (error) {
-
-        }
-        // setProducts(categories[category].products)
-    }, [category, categories])
     return (
         <>
             <h2 className='title'>{category.toUpperCase()}</h2>

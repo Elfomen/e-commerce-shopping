@@ -1,10 +1,13 @@
 import './card.scss'
 import {ReactComponent as ShopingIcon} from '../../assets/shopping-bag.svg'
 import { useContext } from 'react'
-import { CardDropdownContext } from '../../Context/card-dropdown-contex'
+import { useSelector } from 'react-redux'
+import { cartSelector } from '../../redux/store/cart/cart.selector'
 const CardIcon = ({ onclick }) => {
 
-    const { cartItems } = useContext(CardDropdownContext)
+    // const { cartItems } = useContext(CardDropdownContext)
+
+    const cartItems = useSelector(cartSelector.getCartItems)
 
     const calculateCardTotal = () => {
         let total = 0

@@ -1,0 +1,3 @@
+export const CATEGORY_CONSTANTS = {
+    SET_CATEGORIES: 'SET_CATEGORIES'
+}

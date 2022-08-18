@@ -2,14 +2,21 @@ import './card.scss'
 import ButtonComponent from '../button-component/button'
 import CartItem from '../cart-item/card'
 import { useContext } from 'react'
-import { CardDropdownContext } from '../../Context/card-dropdown-contex'
 import {Link} from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux'
+import { cartSelector } from '../../redux/store/cart/cart.selector'
+import { changeCartStatus } from '../../redux/store/cart/cart.actions'
 const CardDropdown=  () => {
 
-    const { cartItems , cardStatus , setCardStatus } = useContext(CardDropdownContext)
+    // const { cartItems , cardStatus , setCardStatus } = useContext(CardDropdownContext)
+
+    const cartItems = useSelector(cartSelector.getCartItems)
+
+    const dispatch = useDispatch()
 
     const handleStatusAfterClick = () => {
-        setCardStatus(!cardStatus)
+        // setCardStatus()
+        dispatch(changeCartStatus())
     }
 
 

@@ -1,11 +1,12 @@
 import CategoryItem from "../category-item/category-item"
 import './list.scss'
-import axios from '../../axios'
-import { useContext, useEffect, useState } from "react"
-import { CategoryContext } from "../../Context/category-context"
+import { useSelector } from "react-redux"
+import { categorisSelectors } from "../../redux/store/categories/categories.selector"
 const CategoryList = () => {
 
-    const { categories } = useContext(CategoryContext)
+    const categories = useSelector(categorisSelectors.getCategories)
+
+
     return (
         <div className='categories-container'>
             {

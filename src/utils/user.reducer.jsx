@@ -1,0 +1,1 @@
+export const createActions = (action , payload) => ({ action , payload  })

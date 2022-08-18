@@ -1,12 +1,25 @@
 import { useContext } from 'react'
+import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import ButtonComponent from '../../components/button-component/button'
 import CartItem from '../../components/cart-item/card'
-import { CardDropdownContext } from '../../Context/card-dropdown-contex'
+import { useDispatch } from 'react-redux'
+import { cartSelector } from '../../redux/store/cart/cart.selector'
 import './checkout.scss'
+import { addItemToCart, removeItemFromCart } from '../../redux/store/cart/cart.actions'
 
 const Cart_Checkout = () => {
-    const { cartItems, addItemToCart, deleteItemFromCart } = useContext(CardDropdownContext)
+    // const { cartItems, addItemToCart, deleteItemFromCart } = useContext(CardDropdownContext)
+
+    const {cartItems} = useSelector(cartSelector.getCartItems)
+    const dispatch = useDispatch()
+    const addCartItem = (item) => {
+        dispatch(addItemToCart(item))
+    }
+
+    const removeCartItem = (item) => {
+        removeItemFromCart(item)
+    }
 
     const calculateCartTotal = () => {
         let sum = 0;

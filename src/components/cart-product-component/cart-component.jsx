@@ -1,5 +1,4 @@
 import { useContext } from 'react'
-import { CardDropdownContext } from '../../Context/card-dropdown-contex'
 import './component.scss'
 
 const CardCheckoutComponent = ({ cart_item  , handleClick , handleDeletion}) => {

@@ -1,11 +1,16 @@
 import './categories.scss'
 import CategoryPreview from '../../components/category-preview/preview'
-import { CategoryContext } from '../../Context/category-context'
 import { useContext } from 'react'
+import { useSelector } from 'react-redux'
+import { categorisSelectors } from '../../redux/store/categories/categories.selector'
 
 const CategoriesPreview = () => {
 
-    const { categories } = useContext(CategoryContext)
+    // const { categories } = useContext(CategoryContext)
+
+    const categories = useSelector(categorisSelectors.getCategories)
+
+    console.log(categories)
 
     return (
         <>

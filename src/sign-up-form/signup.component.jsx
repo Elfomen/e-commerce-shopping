@@ -1,7 +1,6 @@
 import { useContext, useState } from "react"
 import ButtonComponent from "../components/button-component/button"
 import FormInput from "../components/FormInput/forminput"
-import { UserContext } from "../Context/user-context"
 import { crateAuthUserWithEmailAndPassword , auth , createUserDocumentFromAuth } from '../utils/firebase/firebaseutils'
 import './signupform.scss'
 const defaultFormField = {
